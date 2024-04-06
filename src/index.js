@@ -3,7 +3,7 @@
 // for using import statement with dotenv
 import dotenv from "dotenv"
 dotenv.config({
-    path:'./env'
+    path:'./.env'
 })
 // now in json file in "dev":"-r dotenv/config --experimental-json-modules" 
 // give it as import dotenv as experimental feature  
@@ -27,7 +27,8 @@ connectDB()
   })
 })
 .catch((err)=>{
-console.log("Mongo DB Connection failed");
+console.log("Mongo DB Connection failed",err);
+process.exit(1);
 })
 
 
