@@ -54,7 +54,7 @@ const userSchema= new Schema(
         next();
     })
 
-    userSchema.methods.isPasswordCorrect= async function(password){
+    userSchema.methods.isPasswordCorrect= async function(password){  // this method returns true/false
         return await brcypt.compare(password,this.password)
     }
 
