@@ -234,7 +234,7 @@ try {
 const changeCurrentPassword=asyncHandler(async (req,res)=>{
     const {oldPassword,newPassword}=req.body
 
-    const user=await User.findById(req.User?._id)  // if not works then req.User?._id
+    const user=await User.findById(req.user?._id)  // if not works then req.User?._id
     const isPasswordCorrect=await user.isPasswordCorrect(oldPassword)
 
     if(!isPasswordCorrect){
